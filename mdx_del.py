@@ -2,20 +2,21 @@
 
 
 '''
-Del/Ins Extension for Python-Markdown
+Del Extension for Python-Markdown
 =====================================
 
-Wraps the inline content with ins/del tags.
+Wraps the inline content with del tags. Gratuitous fork of https://github.com/aleray/mdx_del_ins,
+except lacking the somewhat-useless "ins" functionality.
 
 
 Usage
 -----
 
     >>> import markdown
-    >>> src = """This is ++added content++ and this is ~~deleted content~~""" 
-    >>> html = markdown.markdown(src, ['del_ins'])
+    >>> src = """This is ~~deleted content~~""" 
+    >>> html = markdown.markdown(src, ['del'])
     >>> print(html)
-    <p>This is <ins>added content</ins> and this is <del>deleted content</del>
+    <p>This is <del>deleted content</del>
     </p>
 
 
@@ -41,20 +42,18 @@ from markdown.inlinepatterns import SimpleTagPattern
 
 
 DEL_RE = r"(\~\~)(.+?)(\~\~)"
-INS_RE = r"(\+\+)(.+?)(\+\+)"
 
 
-class DelInsExtension(markdown.extensions.Extension):
-    """Adds del_ins extension to Markdown class."""
+class DelExtension(markdown.extensions.Extension):
+    """Adds del extension to Markdown class."""
 
     def extendMarkdown(self, md, md_globals):
         """Modifies inline patterns."""
         md.inlinePatterns.add('del', SimpleTagPattern(DEL_RE, 'del'), '<not_strong')
-        md.inlinePatterns.add('ins', SimpleTagPattern(INS_RE, 'ins'), '<not_strong')
 
 
 def makeExtension(configs={}):
-    return DelInsExtension(configs=dict(configs))
+    return DelExtension(configs=dict(configs))
 
 
 if __name__ == "__main__":
