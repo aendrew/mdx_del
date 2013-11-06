@@ -1,23 +1,23 @@
-Del/Ins Extension for Python-Markdown
+Del Extension for Python-Markdown
 =====================================
 
-Wraps the inline content with `ins` and `del` tags.
+Wraps inline content with `del` tags.
 
 
 Installation
 ------------
 
-    pip install git+git://github.com/aleray/mdx_del_ins.git
+    pip install git+git://github.com/aendrew/mdx_del.git
 
 
 Usage
 -----
 
     >>> import markdown
-    >>> src = """This is ++added content++ and this is ~~deleted content~~""" 
-    >>> html = markdown.markdown(src, ['del_ins'])
+    >>> src = """This is ~~deleted content~~""" 
+    >>> html = markdown.markdown(src, ['del'])
     >>> print(html)
-    <p>This is <ins>added content</ins> and this is <del>deleted content</del>
+    <p>This <del>deleted content</del>
     </p>
 
 
