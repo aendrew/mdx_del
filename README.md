@@ -29,8 +29,8 @@ Dependencies
 
 Copyright
 ---------
-
-2011, 2012 [The active archives contributors](http://activearchives.org/)
+Ins-less version (c) 2013 Ændrew Rininsland.
+Original version (c) 2011, 2012 [The active archives contributors](http://activearchives.org/)
 All rights reserved.
 
 This software is released under the modified BSD License. 
