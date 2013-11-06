@@ -5,13 +5,13 @@ from setuptools import setup
 
 
 setup(
-    name='mdx_del_ins',
+    name='mdx_del',
     version='1.0',
-    author='Alexandre Leray',
-    author_email='alexandre@stdin.fr',
-    description='Python-Markdown extension to support the <del> and <ins> tags.',
-    url='http://activearchives.org/',
-    py_modules=['mdx_del_ins'],
+    author='Ændrew Rininsland',
+    author_email='aendrew@aendrew.com',
+    description='Python-Markdown extension to support the <del> tag, forked from https://github.com/aleray/mdx_del_ins',
+    url='https://github.com/aendrew/mdx_del',
+    py_modules=['mdx_del'],
     install_requires=['Markdown>=2.0',],
     classifiers=[
         'Development Status :: 4 - Beta',
